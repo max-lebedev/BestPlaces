@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E61BE3A400DCF7D80D2949D /* Pods_BestPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDD3FCCC6A2DC827B95D9B8 /* Pods_BestPlaces.framework */; };
+		75031C5826D171CF00085CC6 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75031C5726D171CF00085CC6 /* RatingControl.swift */; };
 		753CDB5026CED5F10001AA54 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753CDB4F26CED5F10001AA54 /* CustomTableViewCell.swift */; };
 		753CDB5226CEDDA70001AA54 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753CDB5126CEDDA70001AA54 /* PlaceModel.swift */; };
 		753CDB5426CFCA7E0001AA54 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2E18569F9723220495846ACB /* Pods-BestPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestPlaces.release.xcconfig"; path = "Target Support Files/Pods-BestPlaces/Pods-BestPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		3EDD3FCCC6A2DC827B95D9B8 /* Pods_BestPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75031C5726D171CF00085CC6 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		753CDB4F26CED5F10001AA54 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		753CDB5126CEDDA70001AA54 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
@@ -82,11 +84,12 @@
 				75648D3526CBA6AB0038F632 /* AppDelegate.swift */,
 				75648D3726CBA6AB0038F632 /* SceneDelegate.swift */,
 				75648D4926CBAD1A0038F632 /* MainViewController.swift */,
+				753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */,
 				753CDB4F26CED5F10001AA54 /* CustomTableViewCell.swift */,
 				753CDB5126CEDDA70001AA54 /* PlaceModel.swift */,
 				758B72B026D01ED500DC3DEC /* StorageManager.swift */,
+				75031C5726D171CF00085CC6 /* RatingControl.swift */,
 				75648D3B26CBA6AB0038F632 /* Main.storyboard */,
-				753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */,
 				75648D3E26CBA6AC0038F632 /* Assets.xcassets */,
 				75648D4026CBA6AC0038F632 /* LaunchScreen.storyboard */,
 				75648D4326CBA6AC0038F632 /* Info.plist */,
@@ -221,6 +224,7 @@
 				753CDB5426CFCA7E0001AA54 /* NewPlaceViewController.swift in Sources */,
 				75648D3626CBA6AB0038F632 /* AppDelegate.swift in Sources */,
 				758B72B126D01ED500DC3DEC /* StorageManager.swift in Sources */,
+				75031C5826D171CF00085CC6 /* RatingControl.swift in Sources */,
 				753CDB5226CEDDA70001AA54 /* PlaceModel.swift in Sources */,
 				753CDB5026CED5F10001AA54 /* CustomTableViewCell.swift in Sources */,
 				75648D3826CBA6AB0038F632 /* SceneDelegate.swift in Sources */,

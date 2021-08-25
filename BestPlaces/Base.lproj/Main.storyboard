@@ -146,6 +146,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="ZlU-zT-ace">
+                                        <rect key="frame" x="0.0" y="499.5" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZlU-zT-ace" id="LsS-5k-Wzo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="275" placeholderIntrinsicHeight="110" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oox-ZB-Zm6" customClass="RatingControl" customModule="BestPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="69.5" y="15" width="275" height="110"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oox-ZB-Zm6" firstAttribute="centerY" secondItem="LsS-5k-Wzo" secondAttribute="centerY" id="eqc-bm-tF0"/>
+                                                <constraint firstItem="Oox-ZB-Zm6" firstAttribute="centerX" secondItem="LsS-5k-Wzo" secondAttribute="centerX" id="nuo-Yx-fhJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -171,6 +188,7 @@
                         <outlet property="placeLocation" destination="Gxo-Mb-1PE" id="N0Z-so-x1T"/>
                         <outlet property="placeName" destination="dw4-Bq-5x1" id="Q63-27-nSU"/>
                         <outlet property="placeType" destination="HYq-8p-7yE" id="qw6-4M-rML"/>
+                        <outlet property="ratingControl" destination="Oox-ZB-Zm6" id="ME7-HP-JP3"/>
                         <outlet property="saveButton" destination="DRs-e0-Vv6" id="XVa-FG-zgi"/>
                     </connections>
                 </tableViewController>
@@ -246,39 +264,53 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vcr-EN-tBb">
-                                                    <rect key="frame" x="96" y="8" width="302" height="69"/>
+                                                    <rect key="frame" x="96" y="8" width="152" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq3-YP-mNB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="152" height="28"/>
                                                             <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lacation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7v-Sa-7E0">
-                                                            <rect key="frame" x="0.0" y="31" width="302" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="31" width="152" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icg-KH-rLd">
-                                                            <rect key="frame" x="0.0" y="50.5" width="302" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50.5" width="152" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="KaP-xu-UXb" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="256" y="9.5" width="150" height="66"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="2AI-JT-dgc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="KaP-xu-UXb" firstAttribute="leading" secondItem="Vcr-EN-tBb" secondAttribute="trailing" constant="8" id="8Xd-8g-Pfe"/>
                                                 <constraint firstItem="6qf-dx-yT7" firstAttribute="centerY" secondItem="CRI-VR-tVx" secondAttribute="centerY" id="CHS-E9-cLL"/>
                                                 <constraint firstItem="6qf-dx-yT7" firstAttribute="leading" secondItem="CRI-VR-tVx" secondAttribute="leading" constant="15" id="KSo-bD-Pgt"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vcr-EN-tBb" secondAttribute="trailing" constant="16" id="TAL-cm-aHL"/>
+                                                <constraint firstItem="KaP-xu-UXb" firstAttribute="centerY" secondItem="CRI-VR-tVx" secondAttribute="centerY" id="Qa9-LT-c1N"/>
+                                                <constraint firstAttribute="trailing" secondItem="KaP-xu-UXb" secondAttribute="trailing" constant="8" id="clp-Ex-ytF"/>
                                                 <constraint firstItem="Vcr-EN-tBb" firstAttribute="leading" secondItem="6qf-dx-yT7" secondAttribute="trailing" constant="16" id="qfz-zl-7dG"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vcr-EN-tBb" secondAttribute="bottom" constant="8" id="uEu-xP-yeu"/>
                                                 <constraint firstItem="Vcr-EN-tBb" firstAttribute="top" secondItem="CRI-VR-tVx" secondAttribute="top" constant="8" id="uei-kN-0AF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="KaP-xu-UXb" id="oqd-LC-Qr9"/>
                                             <outlet property="imageOfPlace" destination="6qf-dx-yT7" id="c2C-CW-Pgf"/>
                                             <outlet property="locationLabel" destination="Q7v-Sa-7E0" id="xlO-MZ-lWM"/>
                                             <outlet property="nameLabel" destination="vq3-YP-mNB" id="0B3-pu-nur"/>
@@ -336,12 +368,22 @@
             <point key="canvasLocation" x="215.94202898550725" y="-13.392857142857142"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="KaP-xu-UXb">
+            <size key="intrinsicContentSize" width="90" height="66"/>
+        </designable>
+        <designable name="Oox-ZB-Zm6">
+            <size key="intrinsicContentSize" width="275" height="110"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="hkN-h2-Zn4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,4 +7,5 @@ target 'BestPlaces' do
 
   # Pods for BestPlaces
 pod 'RealmSwift', '~>10'
+pod 'Cosmos', '~> 23.0'
 end
