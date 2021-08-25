@@ -5,6 +5,7 @@
 //  Created by Максим Лебедев on 19.08.2021.
 //
 
+import Foundation
 import RealmSwift
 
 class Place: Object {
