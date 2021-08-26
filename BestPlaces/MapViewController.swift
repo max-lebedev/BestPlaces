@@ -7,11 +7,15 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
     var place = Place()
     let annotationIdentifire = "annotationIdentifire"
+    let locationManager = CLLocationManager()
+    let regionInMeters = 1000.00
+
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -22,10 +26,23 @@ class MapViewController: UIViewController {
         
         setupPlacemark()
         
+        checkLocationServices()
+        
     }
     @IBAction func closeVC() {
         
         dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func cerntreViewInUserLocation() {
+        
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
         
     }
     
@@ -59,6 +76,68 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func checkLocationServices() {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            
+            setupLocationManager()
+            
+            checkLocationAutorization()
+            
+        } else {
+            // show allert controller
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlertController()
+            }
+        }
+    }
+    
+    
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAutorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            // show allert
+            showAlertController()
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            // show alert
+            showAlertController()
+            break
+        case .authorizedAlways:
+            mapView.showsUserLocation = true
+            break
+        @unknown default:
+            print("New case is available")
+        }
+    }
+    
+    private func showAlertController() {
+        let alertController = UIAlertController(title: "Location Permission Required", message: "Please enable location permissions in settings.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
+                //Redirect to Settings app
+                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(cancelAction)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -84,5 +163,13 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAutorization()
     }
 }

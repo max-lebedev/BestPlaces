@@ -232,14 +232,27 @@
                                     <action selector="closeVC" destination="aBj-te-CEW" eventType="touchUpInside" id="SrK-o1-h6A"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44g-z0-zZs">
+                                <rect key="frame" x="324" y="792" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="RYp-5Z-jY7"/>
+                                    <constraint firstAttribute="height" constant="50" id="erI-GP-Y3M"/>
+                                </constraints>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="cerntreViewInUserLocation" destination="aBj-te-CEW" eventType="touchUpInside" id="sLz-ru-VLk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a1G-BP-EPD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a1G-BP-EPD" firstAttribute="trailing" secondItem="pNA-v0-Law" secondAttribute="trailing" constant="40" id="2r8-m1-IC4"/>
                             <constraint firstAttribute="bottom" secondItem="OoY-sa-QRQ" secondAttribute="bottom" id="4eO-32-YXw"/>
+                            <constraint firstItem="a1G-BP-EPD" firstAttribute="trailing" secondItem="44g-z0-zZs" secondAttribute="trailing" constant="40" id="FKO-5l-0Tb"/>
                             <constraint firstItem="OoY-sa-QRQ" firstAttribute="leading" secondItem="a1G-BP-EPD" secondAttribute="leading" id="NNe-9F-HBZ"/>
                             <constraint firstItem="pNA-v0-Law" firstAttribute="top" secondItem="a1G-BP-EPD" secondAttribute="top" constant="40" id="bYt-J7-YCc"/>
+                            <constraint firstItem="a1G-BP-EPD" firstAttribute="bottom" secondItem="44g-z0-zZs" secondAttribute="bottom" constant="20" id="cmk-tg-tMt"/>
                             <constraint firstItem="OoY-sa-QRQ" firstAttribute="trailing" secondItem="a1G-BP-EPD" secondAttribute="trailing" id="l57-IT-ygY"/>
                             <constraint firstItem="OoY-sa-QRQ" firstAttribute="top" secondItem="ATE-s6-y59" secondAttribute="top" id="lhF-0g-MIX"/>
                         </constraints>
@@ -260,7 +273,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -321,21 +334,21 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vcr-EN-tBb">
                                                     <rect key="frame" x="96" y="8" width="222" height="69"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq3-YP-mNB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="222" height="29.5"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq3-YP-mNB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="222" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lacation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7v-Sa-7E0">
-                                                            <rect key="frame" x="0.0" y="32.5" width="222" height="16"/>
-                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                                                            <rect key="frame" x="0.0" y="28.5" width="222" height="18"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icg-KH-rLd">
-                                                            <rect key="frame" x="0.0" y="51.5" width="222" height="17.5"/>
-                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                                                            <rect key="frame" x="0.0" y="49.5" width="222" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -443,6 +456,7 @@
         <image name="camcel" width="128" height="128"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
+        <image name="location" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
