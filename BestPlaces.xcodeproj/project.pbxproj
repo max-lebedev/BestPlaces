@@ -21,6 +21,7 @@
 		75648D4226CBA6AC0038F632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75648D4026CBA6AC0038F632 /* LaunchScreen.storyboard */; };
 		75648D4A26CBAD1A0038F632 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75648D4926CBAD1A0038F632 /* MainViewController.swift */; };
 		758B72B126D01ED500DC3DEC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B72B026D01ED500DC3DEC /* StorageManager.swift */; };
+		75DE54F626D6CD9100302E87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE54F526D6CD9100302E87 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		75648D4326CBA6AC0038F632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75648D4926CBAD1A0038F632 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		758B72B026D01ED500DC3DEC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		75DE54F526D6CD9100302E87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				75648D4926CBAD1A0038F632 /* MainViewController.swift */,
 				753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */,
 				753CDB4F26CED5F10001AA54 /* CustomTableViewCell.swift */,
+				75DE54F526D6CD9100302E87 /* MapViewController.swift */,
 				753CDB5126CEDDA70001AA54 /* PlaceModel.swift */,
 				758B72B026D01ED500DC3DEC /* StorageManager.swift */,
 				75031C5726D171CF00085CC6 /* RatingControl.swift */,
@@ -171,6 +174,7 @@
 				753CDB5426CFCA7E0001AA54 /* NewPlaceViewController.swift in Sources */,
 				75648D3626CBA6AB0038F632 /* AppDelegate.swift in Sources */,
 				758B72B126D01ED500DC3DEC /* StorageManager.swift in Sources */,
+				75DE54F626D6CD9100302E87 /* MapViewController.swift in Sources */,
 				75031C5826D171CF00085CC6 /* RatingControl.swift in Sources */,
 				753CDB5226CEDDA70001AA54 /* PlaceModel.swift in Sources */,
 				753CDB5026CED5F10001AA54 /* CustomTableViewCell.swift in Sources */,
