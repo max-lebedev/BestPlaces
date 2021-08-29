@@ -8,7 +8,7 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
-
+    
     var currentPlace: Place!
     var imageIsChanged = false
     
@@ -22,7 +22,7 @@ class NewPlaceViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView(frame: CGRect(x: 0,
                                                          y: 0,
                                                          width: tableView.frame.size.width,
@@ -74,21 +74,19 @@ class NewPlaceViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard
-            let identifire = segue.identifier,
+            let identifier = segue.identifier,
             let mapVC = segue.destination as? MapViewController
         else { return }
         
-        mapVC.incomeSegueIdentifire = identifire
+        mapVC.incomeSegueIdentifier = identifier
         mapVC.mapViewControllerDelegate = self
         
-        if identifire == "showPlace" {
-            
+        if identifier == "showPlace" {
             mapVC.place.name = placeName.text!
             mapVC.place.location = placeLocation.text
             mapVC.place.type = placeType.text
             mapVC.place.imageData = placeImage.image?.pngData()
         }
-        
     }
     
     func savePlace() {

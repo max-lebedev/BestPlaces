@@ -21,6 +21,7 @@
 		75648D4226CBA6AC0038F632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75648D4026CBA6AC0038F632 /* LaunchScreen.storyboard */; };
 		75648D4A26CBAD1A0038F632 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75648D4926CBAD1A0038F632 /* MainViewController.swift */; };
 		758B72B126D01ED500DC3DEC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B72B026D01ED500DC3DEC /* StorageManager.swift */; };
+		7590508C26D8EEFF005A41C5 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590508B26D8EEFF005A41C5 /* MapManager.swift */; };
 		75DE54F626D6CD9100302E87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE54F526D6CD9100302E87 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +36,10 @@
 		75648D3C26CBA6AB0038F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75648D3E26CBA6AC0038F632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75648D4126CBA6AC0038F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		75648D4326CBA6AC0038F632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75648D4326CBA6AC0038F632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "BestPlaces/Support Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		75648D4926CBAD1A0038F632 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		758B72B026D01ED500DC3DEC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		7590508B26D8EEFF005A41C5 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		75DE54F526D6CD9100302E87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,21 +76,62 @@
 		75648D3426CBA6AB0038F632 /* BestPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				75648D3526CBA6AB0038F632 /* AppDelegate.swift */,
-				75648D3726CBA6AB0038F632 /* SceneDelegate.swift */,
-				75648D4926CBAD1A0038F632 /* MainViewController.swift */,
-				753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */,
-				753CDB4F26CED5F10001AA54 /* CustomTableViewCell.swift */,
-				75DE54F526D6CD9100302E87 /* MapViewController.swift */,
-				753CDB5126CEDDA70001AA54 /* PlaceModel.swift */,
-				758B72B026D01ED500DC3DEC /* StorageManager.swift */,
-				75031C5726D171CF00085CC6 /* RatingControl.swift */,
-				75648D3B26CBA6AB0038F632 /* Main.storyboard */,
-				75648D3E26CBA6AC0038F632 /* Assets.xcassets */,
-				75648D4026CBA6AC0038F632 /* LaunchScreen.storyboard */,
-				75648D4326CBA6AC0038F632 /* Info.plist */,
+				7590508D26D8F9C1005A41C5 /* ViewControllers */,
+				7590508F26D8FA03005A41C5 /* Helpers */,
+				7590508E26D8F9F4005A41C5 /* Models */,
+				7590509026D8FA17005A41C5 /* Support Files */,
+				7590509126D8FA3D005A41C5 /* Intrface Builder */,
 			);
 			path = BestPlaces;
+			sourceTree = "<group>";
+		};
+		7590508D26D8F9C1005A41C5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75648D4926CBAD1A0038F632 /* MainViewController.swift */,
+				753CDB5326CFCA7E0001AA54 /* NewPlaceViewController.swift */,
+				75DE54F526D6CD9100302E87 /* MapViewController.swift */,
+				753CDB4F26CED5F10001AA54 /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7590508E26D8F9F4005A41C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				753CDB5126CEDDA70001AA54 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7590508F26D8FA03005A41C5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7590508B26D8EEFF005A41C5 /* MapManager.swift */,
+				758B72B026D01ED500DC3DEC /* StorageManager.swift */,
+				75031C5726D171CF00085CC6 /* RatingControl.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7590509026D8FA17005A41C5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				75648D3526CBA6AB0038F632 /* AppDelegate.swift */,
+				75648D3726CBA6AB0038F632 /* SceneDelegate.swift */,
+				75648D3E26CBA6AC0038F632 /* Assets.xcassets */,
+				75648D4326CBA6AC0038F632 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		7590509126D8FA3D005A41C5 /* Intrface Builder */ = {
+			isa = PBXGroup;
+			children = (
+				75648D3B26CBA6AB0038F632 /* Main.storyboard */,
+				75648D4026CBA6AC0038F632 /* LaunchScreen.storyboard */,
+			);
+			path = "Intrface Builder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +219,7 @@
 				758B72B126D01ED500DC3DEC /* StorageManager.swift in Sources */,
 				75DE54F626D6CD9100302E87 /* MapViewController.swift in Sources */,
 				75031C5826D171CF00085CC6 /* RatingControl.swift in Sources */,
+				7590508C26D8EEFF005A41C5 /* MapManager.swift in Sources */,
 				753CDB5226CEDDA70001AA54 /* PlaceModel.swift in Sources */,
 				753CDB5026CED5F10001AA54 /* CustomTableViewCell.swift in Sources */,
 				75648D3826CBA6AB0038F632 /* SceneDelegate.swift in Sources */,
@@ -255,10 +299,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -310,9 +356,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -327,7 +375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 546DHL7PNU;
-				INFOPLIST_FILE = BestPlaces/Info.plist;
+				INFOPLIST_FILE = "BestPlaces/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 546DHL7PNU;
-				INFOPLIST_FILE = BestPlaces/Info.plist;
+				INFOPLIST_FILE = "BestPlaces/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

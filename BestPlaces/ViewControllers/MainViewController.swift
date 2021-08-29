@@ -26,7 +26,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +43,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         definesPresentationContext = true
         
     }
-
+    
     // MARK: - Table view data source
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if isFiltering {
@@ -53,15 +53,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         return places.count
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-
+        
         
         let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
-            
-
+        
+        
         cell.nameLabel?.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
@@ -89,23 +89,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     /* АЛЬТЕРНАТИВНЫЙ МЕТОД
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let place = places[indexPath.row]
-        
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
-            StorageManager.deleteObject(place)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            
-        }
-        
-        return UISwipeActionsConfiguration(actions:[deleteAction])
-    }
+     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+     
+     let place = places[indexPath.row]
+     
+     let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
+     StorageManager.deleteObject(place)
+     tableView.deleteRows(at: [indexPath], with: .automatic)
+     
+     }
+     
+     return UISwipeActionsConfiguration(actions:[deleteAction])
+     }
      */
-
+    
     
     // MARK: - Navigation
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -127,7 +127,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
         
     }
-
+    
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
         
         sorting()
@@ -162,7 +162,7 @@ extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
         filterContentForSearchText(searchController.searchBar.text!)
-    
+        
     }
     
     private func filterContentForSearchText(_ searchText: String) {
